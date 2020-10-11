@@ -1,0 +1,8 @@
+{
+  "domain": "liberation_sensor",
+  "name": "Libération - Récap de l'actualité",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["liberation-direct"]
+}
