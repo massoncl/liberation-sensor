@@ -29,7 +29,7 @@ class LiberationRecap(Entity):
         self._name = "Libération - Dernier récap"
         self._state = datetime.datetime.now()
         self._unit_of_measurement = None
-        self._attributes = {}
+        self._attributes = {"recap": ""}
     
     @property
     def name(self):
@@ -50,4 +50,6 @@ class LiberationRecap(Entity):
     def update(self):
         
         self._state = datetime.datetime.now()
-        self._attributes["recap"] = LiberationDirect().get_news_summary_markdown()
+        markdown = LiberationDirect().get_news_summary_markdown()
+        if markdown:
+            self._attributes["recap"] = markdown
